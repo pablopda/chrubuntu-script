@@ -261,6 +261,7 @@ echo -e "useradd -m user
 echo user | echo user:user | chpasswd
 adduser user adm
 adduser user sudo
+sed -i -e 's/http:\/\/archive.ubuntu.com\/ubuntu\//mirror:\/\/mirrors.ubuntu.com\/mirrors.txt/g' /etc/apt/sources.list
 apt-get -y update
 apt-get -y dist-upgrade
 apt-get -y install ubuntu-minimal
